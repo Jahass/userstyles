@@ -1,10 +1,12 @@
 /* ==UserStyle==
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
-@version        0.1.0
+@version        0.1.1
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements. Developed on Mozilla Firefox.
 @author         Jahass
 ==/UserStyle== */
+
+@-moz-document domain("nationstates.net") {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -266,4 +268,97 @@ table.settings .pdescriptor {
     color: #d0d0d0;
     text-align: center;
     margin: 12px 25px;
+}
+}
+
+@-moz-document url-prefix("https://www.nationstates.net/page=show_dilemma/dilemma=") {
+/* Remove Dilemma Paper */
+div.dilemmapaper {
+    margin: auto;
+    max-width: 100%
+}
+div.dilemmapaperinner {
+    text-align: center
+}
+img.dpaperslice, div.dpaperprice, div.dpaperflag {
+    display: none !important;
+}
+div.dpaper2, div.dpaper4 {
+    background-image: none;
+}
+div.dpaper2 p, div.dpaper4 p, div.dpaper3d {
+    color: #fff;
+}
+div.dpaper3 {
+    margin: 0 10%;
+}
+div.dpaper3d {
+    font-size: 12pt;
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 33.33%);
+    width: 100%;
+}
+div.dpaper3d div.dpapervol {
+    order: 1;
+    text-align: left;
+    padding-left: 10%
+}
+div.dpaper3d div.dpapercityfinal {
+    order: 3;
+    text-align: right;
+    padding-right: 10%
+}
+div.dpaper3d div.dpaperdate {
+    order: 2;
+    text-align: center;
+}
+div.dpaper4 p {
+    margin: 0 10%;
+    font-size: 2.5vw
+}
+}
+
+@-moz-document url-prefix("https://www.nationstates.net/page=enact_dilemma/dilemma") {
+#enactflufftext, img.dpaperslice, div.dpaper2 {
+    display: none;
+}
+#page_enact_dilemma div.dilemmapaper {
+    transform: unset !important;
+}
+#page_enact_dilemma div.dilemmapapers {
+    display: inline-block;
+}
+#page_enact_dilemma div.dilemmapaper {
+    left: 0 !important;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+}
+#page_enact_dilemma div.dilemmapaperinner {
+    position: unset;
+}
+#page_enact_dilemma div.dpaper4 {
+    background: none;
+    filter: brightness(1);
+}
+#page_enact_dilemma div.dpaper4 p {
+    color: #d0d0d0;
+    font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    text-shadow: none;
+    margin: 0;
+}
+.bannerpostcards {
+    text-align: left;
+}
+.bannerpostcard {
+    width: 48%;
+    margin: 0 1em 1em 0;
+}
+.bannerpostcard img {
+    border-radius: 1em;
+}
 }
