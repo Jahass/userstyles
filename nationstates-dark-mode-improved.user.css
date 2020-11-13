@@ -1,364 +1,431 @@
 /* ==UserStyle==
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
-@version        0.1.1
-@description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements. Developed on Mozilla Firefox.
+@updateURL      https://github.com/Jahass/userstyles/nationstates-dark-mode-improved.user.css
+@version        0.1.2
+@description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @-moz-document domain("nationstates.net") {
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    html, body, #banner .bel {
+        font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+    }
 
-hmtl, body, #banner .bel {
-    font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-}
+    /* Site Fixes */
+    a:link, a:visited, fieldset.wfe .dispatchauthorline a:link, fieldset.wfe .dispatchauthorline a:visited, .dispatchbreadcrumbs a:link, .dispatchbreadcrumbs a:visited {
+        color: #03dac5;
+        /* AAA */
+    }
+    .button {
+        font-size: 0.9em;
+    }
+    .tooltip {
+        color: rgb(208, 208, 208);
+    }
 
-/* Site Fixes */
-a:link, a:visited, fieldset.wfe .dispatchauthorline a:link, fieldset.wfe .dispatchauthorline a:visited, .dispatchbreadcrumbs a:link, .dispatchbreadcrumbs a:visited {
-    color: #03dac5;
-    /* AAA */
-}
-.button {
-    font-size: 0.9em;
-}
-.tooltip {
-    color: rgb(208, 208, 208);
-}
+    .entity_selector .ui-menu {
+        background-color: #2a2a2a;
+    }
+    .entity_selector .ui-autocomplete {
+        border: 1px solid #000;
+        box-shadow: 0 1px 3px #333;
+    }
+    .newflagbox img {
+        max-width: 25vh;
+        max-height: 25vh;
+    }
+    .newflagbox img, img.smallflag, img.miniflag {
+        filter: brightness(1) saturate(1.15) drop-shadow(2px 2px 5px #000);
+    }
+    #foot #toplink, #foot #toplink2, #footbar, #footbar:hover {
+        background: transparent;
+    }
 
-.entity_selector .ui-menu {
-    background-color: #2a2a2a;
-}
-.entity_selector .ui-autocomplete {
-    border: 1px solid #000;
-    box-shadow: 0 1px 3px #333;
-}
-.newflagbox img {
-    max-width: 25vh;
-    max-height: 25vh;
-}
-.newflagbox img, img.smallflag, img.miniflag {
-    filter: brightness(1) saturate(1.15) drop-shadow(2px 2px 5px #000);
-}
-#foot #toplink, #foot #toplink2, #footbar, #footbar:hover {
-    background:transparent;
-}
-
-/* Menus */
-#panel {
-    height: 100%;
-}
-#panel ul {
-    padding: 5px 0;
-}
-#panel li i, #banner .bel .bellink i {
-    font-size: 1.5em;
-}
-#banner .bel a.bellink {
-    padding: 0px 14px 2px;
-}
-#banner .bannernation a.bellink.shortname {
-    padding: 0 22px;
-}
-#panel ul.menu a, #banner .bel, #banner .bel .bellink i, #panel li i, #panel ul.popoutmenu li a, #panel ul.popoutmenu li i {
-    color: #a4a4a4;
-    /* AAA */
-}
-#banner .bannernation a.bellink.shortname {
-    font-size: 2.5em;
-}
-img.trophy, img[src*="/trophies/"] {
-    filter: invert(0.9) contrast(1.5) brightness(1.5) !important;
-}
-img[src$="-1.png"] {
-    filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px gold) !important;
-}
-img[src$="-5.png"] {
-    filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px orange) !important;
-}
-img[src$="-10.png"] {
-    filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px green) !important;
-}
+    /* Menus */
+    #panel {
+        height: 100%;
+    }
+    #panel ul {
+        padding: 5px 0;
+    }
+    #panel li i, #banner .bel .bellink i {
+        font-size: 1.5em;
+    }
+    #banner .bel a.bellink {
+        padding: 0px 14px 2px;
+    }
+    #banner .bannernation a.bellink.shortname {
+        padding: 0 22px;
+    }
+    #panel ul.menu a, #banner .bel, #banner .bel .bellink i, #panel li i, #panel ul.popoutmenu li a, #panel ul.popoutmenu li i {
+        color: #a4a4a4;
+        /* AAA */
+    }
+    #banner .bannernation a.bellink.shortname {
+        font-size: 2.5em;
+    }
+    img.trophy, img[src*="/trophies/"] {
+        filter: invert(0.9) contrast(1.5) brightness(1.5) !important;
+    }
+    img[src$="-1.png"] {
+        filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px gold) !important;
+    }
+    img[src$="-5.png"] {
+        filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px orange) !important;
+    }
+    img[src$="-10.png"] {
+        filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px green) !important;
+    }
 
 
-/* Region Page */
-.regionnavbar span.navtext {
-    font-size: 1em;
-}
-.regionnavbar a, .regionnavbar span.navtext {
-    color: #a9a96c;
-    /* AAA */
-}
-.rmbdate a, .rmbdate a:hover {
-    color: #d0d0d0;
-    /* AAA */
-}
-.nameblock .nnameblock .ntype {
-    font-size: 0.75em;
-}
-#pollcontainer > .highcharts-container > svg > g > g > text {
-    font-size: 1em !important;
-    text-shadow: #000 0px 0px 2px;
-    float: right !important;
-}
+    /* Region Page */
+    .regionnavbar span.navtext {
+        font-size: 1em;
+    }
+    .regionnavbar a, .regionnavbar span.navtext {
+        color: #a9a96c;
+        /* AAA */
+    }
+    .rmbdate a, .rmbdate a:hover {
+        color: #d0d0d0;
+        /* AAA */
+    }
+    .nameblock .nnameblock .ntype {
+        font-size: 0.75em;
+    }
 
-/* Dilemma Pages */
-div.dilemmapaper, div.wc-change img {
-    filter: brightness(1.0);
-}
+    /* Dilemma Pages */
+    div.dilemmapaper, div.wc-change img {
+        filter: brightness(1.0);
+    }
 
-.dilemma p, .nationsummary p, fieldset.wfe {
-    font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.125em;
-    line-height: 1.5em;
-}
+    .dilemma p, .nationsummary p, fieldset.wfe {
+        font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.125em;
+        line-height: 1.5em;
+    }
 
-/* Policies */
+    /* Policies */
+    .policylist {
+        display: block;
+    }
 
-.policylist {
-    display: block;
-}
+    div.policybox {
+        background-color: transparent;
+        z-index: 2;
+        padding: 0 18px;
+        width: 45%;
+        display: inline-block;
+    }
+    div.policybox2 {
+        filter: brightness(0.45) saturate(1.25);
+        width: 100%;
+        z-index: -1;
+        border-radius: 1em;
+        display: inline-block;
+    }
+    .policybox h2, .policybox p {
+        color: #fff !important;
+        text-shadow: #000 2px 2px 5px;
+        text-align: center;
+    }
 
-div.policybox {
-    background-color: transparent;
-    z-index: 2;
-    padding: 0 18px;
-    width:45%;
-    display: inline-block;
-}
-div.policybox2 {
-    filter: brightness(0.45) saturate(1.25);
-    width: 100%;
-    z-index: -1;
-    border-radius: 1em;
-    display: inline-block;
-    
-}
-.policybox h2, .policybox p {
-    color: #fff !important;
-    text-shadow: #000 2px 2px 5px;
-    text-align: center;
-}
+    /* Nation Page */
+    img.trophy, #nationcover, .dpaper2, .dpaper3, .dpaper4, img.dpaperslice, img.dpaperpic {
+        filter: brightness(.8) contrast(1.3);
+    }
+    .trophysection {
+        display: block;
+        font-size: 1em;
+    }
+    .trophyrack > img, .trophysection br, #paneltitle, .highcharts-markers > image, .newsbox .ntype {
+        display: none;
+    }
+    .newsbox {
+        line-height: 1.5em;
+    }
+    .newsbox time {
+        font-weight: bold;
+    }
+    p.nationnavbar {
+        display: block;
+    }
+    p.nationnavbar a {
+        color: #a9a96c;
+        /* AAA */
+    }
+    .nationnavbar a span.navtext {
+        opacity: 1;
+    }
+    .nationnavbar i {
+        font-size: 24px;
+        transition: all .2s ease-in-out;
+        vertical-align: middle;
+        padding: 0 22px;
+    }
+    .nationnavbar span.navtext {
+        font-size: 1em;
+        text-transform: capitalize;
+        font-family: inherit;
+        margin: auto;
+        letter-spacing: inherit;
+    }
 
-/* Nation Page */
-img.trophy, #nationcover, .dpaper2, .dpaper3, .dpaper4, img.dpaperslice, img.dpaperpic {
-    filter: brightness(.8) contrast(1.3);
-}
-.trophysection {
-    display: block;
-    font-size: 1em;
-}
-.trophyrack > img, .trophysection br, #paneltitle, .highcharts-markers > image, .newsbox .ntype {
-    display: none;
-}
-.newsbox {
-    line-height: 1.5em;
-}
-.newsbox time {
-    font-weight: bold;
-}
-p.nationnavbar {
-    display: block;
-}
-p.nationnavbar a {
-    color: #a9a96c;
-    /* AAA */
-}
-.nationnavbar a span.navtext {
-    opacity: 1;
-}
-.nationnavbar i {
-    font-size: 24px;
-    transition: all .2s ease-in-out;
-    vertical-align: middle;
-    padding: 0 22px;
-}
-.nationnavbar span.navtext {
-    font-size: 1em;
-    text-transform: capitalize;
-    font-family: inherit;
-    margin: auto;
-    letter-spacing: inherit;
-}
+    /* Highcharts */
+    #pollcontainer > .highcharts-container > svg > g > g > text {
+        font-size: 1em !important;
+        text-shadow: #000 0px 0px 2px;
+        float: right !important;
+    }
+    .highcharts-container span, .highcharts-title tspan, .highcharts-data-labels g text tspan {
+        color: #d0d0d0 !important;
+        fill: #d0d0d0;
+    }
+    .highcharts-container > svg > rect {
+        fill-opacity: 0;
+    }
 
-/* Highcharts */
-.highcharts-container span, .highcharts-title tspan, .highcharts-data-labels g text tspan {
-    color: #d0d0d0 !important;
-    fill: #d0d0d0;
-}
-.highcharts-container > svg > rect {
-    fill-opacity: 0;
-}
+    /* Zombie Control Special */
+    .zsuperweapontarget, .zsuperweapon_logtext {
+        background-color: #191919;
+        border: 1px solid #000;
+        color: #d0d0d0;
+    }
+    #page_zombie_control #zcontent {
+        text-shadow: none;
+    }
+    .zsuperweapon_level {
+        color: #000;
+    }
+    .zsuperweapon_name {
+        color: #b33630;
+    }
+    #zoverview td, #zoverview #zrate td {
+        font-size: 2em;
+    }
+    #zoverview table {
+        margin: auto;
+    }
 
-/* Zombie Control Special */
-.zsuperweapontarget, .zsuperweapon_logtext {
-    background-color: #191919;
-    border: 1px solid #000;
-    color: #d0d0d0;
-}
-#page_zombie_control #zcontent {
-    text-shadow: none;
-}
-.zsuperweapon_level {
-    color: #000;
-}
-.zsuperweapon_name {
-    color: #b33630;
-}
-#zoverview td, #zoverview #zrate td {
-    font-size: 2em;
-}
-#zoverview table {
-    margin: auto;
-}
+    /* Challenge */
+    .trumps-round-cover {
+        background-color: #191919;
+    }
 
-/* Challenge */
-.trumps-round-cover {
-    background-color: #191919;
-}
+    /* Cards & Card Market */
+    .deckcard-card-stats td:nth-child(1) {
+        color: #d0d0d0;
+    }
+    .deckcard-filters .deckcard-token.deckcard-season-season-1, .minicard-season-1 .minicard-season-number {
+        background-color: red;
+    }
+    .deckcard-filters .deckcard-token.deckcard-season-season-2, .minicard-season-2 .minicard-season-number {
+        background-color: blue;
+    }
+    .deckcard-filters .deckcard-token.selected {
+        border: 3px solid #a9a96c;
+    }
+    .deckcard-token, .deckcard-filters a.deckcard-token {
+        color: #d0d0d0;
+        font-weight: 700;
+    }
+    .deckcard-category-legendary .deckcard-stripe, .deckcard-category-legendary {
+        background: rgb(255, 215, 0, 0.3);
+    }
+    .deckcard-category-epic .deckcard-stripe, .deckcard-category-epic {
+        background: rgb(219, 158, 28, 0.3);
+    }
+    .deckcard-category-rare .deckcard-stripe, .deckcard-category-rare {
+        background: rgb(0, 142, 193, 0.3);
+    }
+    .deckcard-category-ultra-rare .deckcard-stripe, .deckcard-category-ultra-rare {
+        background: rgb(172, 0, 230, 0.3);
+    }
+    .deckcard-category-uncommon .deckcard-stripe, .deckcard-category-uncommon {
+        background: rgba(0, 170, 76, 0.3);
+    }
+    .deckcard-category-common .deckcard-stripe, .deckcard-category-common {
+        background: rgb(126, 126, 126, 0.3);
+    }
 
-/* Cards */
-.deckcard-card-stats td:nth-child(1) {
-    color: #d0d0d0;
-}
-.deckcard-filters .deckcard-token.deckcard-season-season-1, .minicard-season-1 .minicard-season-number {
-    background-color: red;
-}
-.deckcard-filters .deckcard-token.deckcard-season-season-2, .minicard-season-2 .minicard-season-number {
-    background-color: blue;
-}
-.deckcard-season-1 .deckcard-stripe * {
-    font-size: 0.9em;
-}
-.deckcard-season-1 img.trophy, .deckcard-season-1 img.badge {
-    max-width: 25px !important;
-}
-.deckcard-season-1 .ntype {
-    text-overflow: ellipsis;
-}
-.deckcard-filters .deckcard-token.selected {
-    border: 3px solid #a9a96c;
-}
-.deckcard-token, .deckcard-filters a.deckcard-token {
-    color: #d0d0d0;
-    font-weight: 700;
-}
-.deckcard-category-legendary .deckcard-stripe, .deckcard-category-legendary {
-    background: rgb(255, 215, 0, 0.3);
-}
-.deckcard-category-epic .deckcard-stripe, .deckcard-category-epic {
-    background: rgb(219, 158, 28, 0.3);
-}
-.deckcard-category-rare .deckcard-stripe, .deckcard-category-rare {
-    background: rgb(0, 142, 193, 0.3);
-}
-.deckcard-category-ultra-rare .deckcard-stripe, .deckcard-category-ultra-rare {
-    background: rgb(172, 0, 230, 0.3);
-}
-.deckcard-category-uncommon .deckcard-stripe, .deckcard-category-uncommon {
-    background: rgba(0, 170, 76, 0.3);
-}
-.deckcard-category-common .deckcard-stripe, .deckcard-category-common {
-    background: rgb(126, 126, 126, 0.3);
-}
+    .deckcard-container {
+        width: 210px;
+        height: 300px;
+    }
+    /* Season 1 Cards */
+    .deckcard-season-1 .deckcard-title,
+    .deckcard-season-1 .deckcard-title a,
+    .deckcard-season-1 .deckcard-desc,
+    .deckcard-season-1 .deckcard-govt,
+    .deckcard-season-1 .deckcard-slogan,
+    .deckcard-season-1 .deckcard-season,
+    .deckcard-season-1 .deckcard-region {
+        color: #d0d0d0;
+    }
+    .deckcard-season-1 .deckcard-category,
+    .deckcard-season-1 .deckcard-season,
+    .deckcard-season-1 .deckcard-region a.rlink {
+        font-size: 0.5em;
+        text-transform: uppercase;
+    }
+    .deckcard-season-1 .deckcard-stripe {
+        filter: unset;
+    }
+    .deckcard-season-1 .nameblock .nnameblock .ntype,
+    .deckcard-season-1 .deckcard-desc {
+        display: none;
+    }
+    .deckcard-season-1 img.trophy,
+    .deckcard-season-1 img.badge {
+        max-width: 1.5em !important;
+    }
+    .deckcard-season-1 .deckcard-info {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+    .deckcard-season-1 .deckcard-region {
+        margin: 0 0.25em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .deckcard-season-1 .deckcard-region a.rlink {
+        display: block;
+    }
+    .deckcard-season-1 .deckcard-category {
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 1.5em;
+        font-style: normal;
+        padding: 0;
+        text-indent: 1.5em;
+        color: #fff;
+    }
 
-/* Settings */
-table.settings .pdescriptor {
-    color: #d0d0d0;
-    text-align: center;
-    margin: 12px 25px;
-}
-}
+    /* Season 2 Cards */
+    .deckcard-season-2 .deckcard-title,
+    .deckcard-season-2 .deckcard-title a,
+    .deckcard-season-2 .deckcard-desc,
+    .deckcard-season-2 .deckcard-govt,
+    .deckcard-season-2 .deckcard-slogan {
+        color: #d0d0d0;
+    }
+    .deckcard-season-2 .deckcard-category, .deckcard-season {
+        font-size: 0.5em;
+    }
+    .deckcard-season-2 .deckcard-stripe .deckcard-region {
+        font-size: 0.5em;
+        text-transform: uppercase;
+    }
+    .deckcard-season-2 .deckcard-info {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+    .deckcard-season-2 .deckcard-title .nameblock .nnameblock .ntype {
+        display: none;
+    }
+    .deckcard-season-2 .deckcard-title .nameblock .nnameblock .nname {
+        font-size: 1em;
+    }
+    .deckcard-season-2 img.trophy,
+    .deckcard-season-2 img.badge {
+        max-width: 1.5em !important;
+    }
 
-@-moz-document url-prefix("https://www.nationstates.net/page=show_dilemma/dilemma=") {
-/* Remove Dilemma Paper */
-div.dilemmapaper {
-    margin: auto;
-    max-width: 100%
-}
-div.dilemmapaperinner {
-    text-align: center
-}
-img.dpaperslice, div.dpaperprice, div.dpaperflag {
-    display: none !important;
-}
-div.dpaper2, div.dpaper4 {
-    background-image: none;
-}
-div.dpaper2 p, div.dpaper4 p, div.dpaper3d {
-    color: #fff;
-}
-div.dpaper3 {
-    margin: 0 10%;
-}
-div.dpaper3d {
-    font-size: 12pt;
-    border: 1px solid white;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 33.33%);
-    width: 100%;
-}
-div.dpaper3d div.dpapervol {
-    order: 1;
-    text-align: left;
-    padding-left: 10%
-}
-div.dpaper3d div.dpapercityfinal {
-    order: 3;
-    text-align: right;
-    padding-right: 10%
-}
-div.dpaper3d div.dpaperdate {
-    order: 2;
-    text-align: center;
-}
-div.dpaper4 p {
-    margin: 0 10%;
-    font-size: 2.5vw
-}
-}
+    /* Settings */
+    table.settings .pdescriptor {
+        color: #d0d0d0;
+        text-align: center;
+        margin: 12px 25px;
+    }
 
-@-moz-document url-prefix("https://www.nationstates.net/page=enact_dilemma/dilemma") {
-#enactflufftext, img.dpaperslice, div.dpaper2 {
-    display: none;
-}
-#page_enact_dilemma div.dilemmapaper {
-    transform: unset !important;
-}
-#page_enact_dilemma div.dilemmapapers {
-    display: inline-block;
-}
-#page_enact_dilemma div.dilemmapaper {
-    left: 0 !important;
-    height: auto;
-    margin: 0;
-    overflow: hidden;
-}
-#page_enact_dilemma div.dilemmapaperinner {
-    position: unset;
-}
-#page_enact_dilemma div.dpaper4 {
-    background: none;
-    filter: brightness(1);
-}
-#page_enact_dilemma div.dpaper4 p {
-    color: #d0d0d0;
-    font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-weight: normal;
-    font-size: 1.125em;
-    line-height: 1.5em;
-    text-shadow: none;
-    margin: 0;
-}
-.bannerpostcards {
-    text-align: left;
-}
-.bannerpostcard {
-    width: 48%;
-    margin: 0 1em 1em 0;
-}
-.bannerpostcard img {
-    border-radius: 1em;
-}
+    /* Show Dilemma Page */
+    #page_show_dilemma div.dilemmapaper {
+        margin: auto;
+        max-width: 100%
+    }
+    #page_show_dilemma div.dilemmapaperinner {
+        text-align: center
+    }
+    #page_show_dilemma img.dpaperslice, #page_show_dilemma div.dpaperprice, #page_show_dilemma div.dpaperflag {
+        display: none !important;
+    }
+    #page_show_dilemma div.dpaper2, #page_show_dilemma div.dpaper4 {
+        background-image: none;
+    }
+    #page_show_dilemma div.dpaper2 p, #page_show_dilemma div.dpaper4 p, #page_show_dilemma div.dpaper3d {
+        color: #fff;
+    }
+    #page_show_dilemma div.dpaper3 {
+        margin: 0 10%;
+    }
+    #page_show_dilemma div.dpaper3d {
+        font-size: 12pt;
+        border: 1px solid white;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 33.33%);
+        width: 100%;
+    }
+    #page_show_dilemma div.dpaper3d div.dpapervol {
+        order: 1;
+        text-align: left;
+        padding-left: 10%
+    }
+    #page_show_dilemma div.dpaper3d div.dpapercityfinal {
+        order: 3;
+        text-align: right;
+        padding-right: 10%
+    }
+    #page_show_dilemma div.dpaper3d div.dpaperdate {
+        order: 2;
+        text-align: center;
+    }
+    #page_show_dilemma div.dpaper4 p {
+        margin: 0 10%;
+        font-size: 2.5vw
+    }
+
+    /* Enact Dilemma Page */
+    #page_enact_dilemma #enactflufftext, #page_enact_dilemma img.dpaperslice, #page_enact_dilemma div.dpaper2 {
+        display: none;
+    }
+    #page_enact_dilemma div.dilemmapaper {
+        transform: unset !important;
+    }
+    #page_enact_dilemma div.dilemmapapers {
+        display: inline-block;
+    }
+    #page_enact_dilemma div.dilemmapaper {
+        left: 0 !important;
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+    }
+    #page_enact_dilemma div.dilemmapaperinner {
+        position: unset;
+    }
+    #page_enact_dilemma div.dpaper4 {
+        background: none;
+        filter: brightness(1);
+    }
+    #page_enact_dilemma div.dpaper4 p {
+        color: #d0d0d0;
+        font-family: roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-weight: normal;
+        font-size: 1.125em;
+        line-height: 1.5em;
+        text-shadow: none;
+        margin: 0;
+    }
+    #page_enact_dilemma .bannerpostcards {
+        text-align: left;
+    }
+    #page_enact_dilemma .bannerpostcard {
+        width: 48%;
+        margin: 0 1em 1em 0;
+    }
+    #page_enact_dilemma .bannerpostcard img {
+        border-radius: 1em;
+    }
 }
