@@ -2,11 +2,13 @@
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
 @updateURL      https://github.com/Jahass/userstyles/nationstates-dark-mode-improved.user.css
-@version        0.1.3
+@version        0.1.4
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
+/* Please note the below import is a global import. I'll find away around this sometime else. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @-moz-document domain("nationstates.net") {
     html,
     body,
@@ -115,6 +117,31 @@
         font-size: 1.125em;
         line-height: 1.5em;
     }
+    #dlegislationbox {
+        height: 88px;
+        background-size: cover;
+    }
+    #dlegislationtext {
+        margin-top: 16px;
+    }
+    .wceffects a {
+        display: inline-block;
+        margin: .25em .75em;
+    }
+    .wc-change > img {
+        max-width: 16px;
+        margin-right: .25em;
+    }
+    .wc1 .smalltext {
+        display: inline;
+        color: #000;
+        font-size: 1px;
+    }
+    .wc2.wcg,
+    .wc2.wcr {
+        color: #d0d0d0 !important;
+        font-size: 14px;
+    }
 
     /* Show Dilemma Page */
     #page_show_dilemma div.dilemmapaper {
@@ -201,16 +228,6 @@
         text-shadow: none;
         margin: 0;
     }
-    #page_enact_dilemma .bannerpostcards {
-        text-align: left;
-    }
-    #page_enact_dilemma .bannerpostcard {
-        width: 48%;
-        margin: 0 1em 1em 0;
-    }
-    #page_enact_dilemma .bannerpostcard img {
-        border-radius: 1em;
-    }
 
     /* Policies */
     div.policylist {
@@ -235,6 +252,41 @@
         z-index: -1;
         border-radius: 1em;
         display: inline-block;
+    }
+
+    /* Postcards */
+    #page_enact_dilemma .bannerpostcards {
+        text-align: left;
+        display: block;
+    }
+    #page_enact_dilemma .bannerpostcard {
+        width: 48%;
+        margin: 0 1em 1em 0;
+    }
+    #page_enact_dilemma .bannerpostcard img {
+        filter: brightness(0.45) saturate(1.25);
+        border-radius: 1em;
+    }
+    .bannerpostcardtext {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+    .bannerpostcardtitle {
+        font-family: Georgia, Garamond, times new roman, Times, serif;
+        letter-spacing: -1px;
+        text-shadow: #000 2px 2px 5px;
+        text-align: center;
+        margin-top: 1.5em;
+        font-size: 165%;
+        font-weight: 700;
+    }
+    .bannerpostcarddesc {
+        font-style: italic;
+        font-family: Georgia, Garamond, times new roman, Times, serif;
+        font-size: 16px;
+        margin-top: 1.5em;
+        text-shadow: #000 2px 2px 5px;
     }
 
     /* Nation Page */
@@ -283,7 +335,7 @@
         margin: auto;
         letter-spacing: inherit;
     }
-    
+
     /* Trophies */
     .trophysection {
         display: block;
