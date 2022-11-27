@@ -2,12 +2,10 @@
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
 @updateURL      https://github.com/Jahass/userstyles/nationstates-dark-mode-improved.user.css
-@version        0.1.4
+@version        0.1.5
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
-/* Please note the below import is a global import. I'll find away around this sometime else. */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @-moz-document domain("nationstates.net") {
     html,
@@ -299,8 +297,7 @@
     img.dpaperpic {
         filter: brightness(.8) contrast(1.3);
     }
-    .trophyrack > img,
-    .trophysection br,
+
     #paneltitle,
     .highcharts-markers > image,
     .newsbox .ntype {
@@ -340,7 +337,12 @@
     .trophysection {
         display: block;
         font-size: 1em;
+		margin-top: 0.5em;
+		margin-left: 0.1em;
     }
+	.trophysection br {
+		display: none;
+	}
     img.trophy,
     img[src*="/trophies/"] {
         filter: invert(0.9) contrast(1.5) brightness(1.5) !important;
@@ -354,6 +356,9 @@
     img[src$="-10.png"] {
         filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px green) !important;
     }
+	.trophyrack > img {
+		filter: invert(0.9) contrast(1.5) brightness(1.5) hue-rotate(180deg) drop-shadow(0px 0px 3px #fff) !important;
+	}
 
     /* Highcharts */
     #pollcontainer > .highcharts-container > svg > g > g > text {
@@ -401,48 +406,117 @@
     }
 
     /* Cards & Card Market */
+    
+    /* Misc */
+    .deckcard-token {
+        border-radius: 1em;
+		width: 9.5em;
+		text-align:center;
+    }
+    .deckcard-token,
+    .deckcard-filters a.deckcard-token {
+        color: #000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+    
+    /* COMMON */
+    .deckcard-token.deckcard-category-common,
+    .deckcard-filters .deckcard-category-common {
+        background: #fdfefe;
+    }
+	.minicard-season-1.deckcard-category-common,
+	.minicard-season-2.deckcard-category-common{
+		border: 2px solid #fdfefe;
+	}
+    
+    /* UNCOMMON */
+    .deckcard-token.deckcard-category-uncommon,
+    .deckcard-filters .deckcard-category-uncommon {
+        background: #27ae60;
+    }
+	.minicard-season-1.deckcard-category-uncommon,
+	.minicard-season-2.deckcard-category-uncommon {
+		border: 2px solid #27ae60;
+	}
+    
+    /* RARE */
+    .deckcard-token.deckcard-category-rare,
+    .deckcard-filters .deckcard-category-rare {
+        background: #2471a3;
+    }
+	.minicard-season-1.deckcard-category-rare,
+	.minicard-season-2.deckcard-category-rare {
+		border: 2px solid #2471a3;
+	}
+    
+    /* ULTRA RARE */
+    .deckcard-token.deckcard-category-ultra-rare,
+    .deckcard-filters .deckcard-category-ultra-rare {
+        background: #7d3c98;
+    }
+	.minicard-season-1.deckcard-category-ultra-rare,
+	.minicard-season-2.deckcard-category-ultra-rare {
+		border: 2px solid #7d3c98;
+	}
+    
+    /* EPIC */
+    .deckcard-token.deckcard-category-epic,
+    .deckcard-filters .deckcard-category-epic {
+        background: #f1c40f;
+    }
+	.minicard-season-1.deckcard-category-epic, 
+	.minicard-season-2.deckcard-category-epic {
+		border: 2px solid #f1c40f;
+	}
+    
+    /* LEGENDARY */
+    .deckcard-token.deckcard-category-legendary,
+    .deckcard-filters .deckcard-category-legendary {
+        background: #d35400;
+    }
+	.minicard-season-1.deckcard-category-legendary,
+	.minicard-season-2.deckcard-category-legendary {
+		border: 2px solid #d35400;
+	}
+	
+	/* OWNED */
+	.deckcard-owned {
+        margin-right: 15px;
+        background-color: #f00;
+        color: #fff;
+        -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+        -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+        box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    }
+    
+	/* Mini cards */
+	.minicard {
+		height: 1em;
+	}
+	.minicard-flag {
+		height: 100%;
+	}
+	.minicard .deckcard-stripe {
+		display: none;
+	}
+    
+    
     .deckcard-card-stats td:nth-child(1) {
         color: #d0d0d0;
     }
     .deckcard-filters .deckcard-token.deckcard-season-season-1,
     .minicard-season-1 .minicard-season-number {
         background-color: red;
+		color: white;
     }
     .deckcard-filters .deckcard-token.deckcard-season-season-2,
     .minicard-season-2 .minicard-season-number {
         background-color: blue;
+		color: white;
     }
     .deckcard-filters .deckcard-token.selected {
         border: 3px solid #a9a96c;
-    }
-    .deckcard-token,
-    .deckcard-filters a.deckcard-token {
-        color: #d0d0d0;
-        font-weight: 700;
-    }
-    .deckcard-category-legendary .deckcard-stripe,
-    .deckcard-category-legendary {
-        background: rgb(255, 215, 0, 0.3);
-    }
-    .deckcard-category-epic .deckcard-stripe,
-    .deckcard-category-epic {
-        background: rgb(219, 158, 28, 0.3);
-    }
-    .deckcard-category-rare .deckcard-stripe,
-    .deckcard-category-rare {
-        background: rgb(0, 142, 193, 0.3);
-    }
-    .deckcard-category-ultra-rare .deckcard-stripe,
-    .deckcard-category-ultra-rare {
-        background: rgb(172, 0, 230, 0.3);
-    }
-    .deckcard-category-uncommon .deckcard-stripe,
-    .deckcard-category-uncommon {
-        background: rgba(0, 170, 76, 0.3);
-    }
-    .deckcard-category-common .deckcard-stripe,
-    .deckcard-category-common {
-        background: rgb(126, 126, 126, 0.3);
     }
 
     .deckcard-container {
@@ -500,6 +574,10 @@
     }
 
     /* Season 2 Cards */
+	.deckcard-season-2 .specialbadges,
+	.deckcard-season-2 #trophycabinet {
+		display: none;
+	}
     .deckcard-season-2 .deckcard-title,
     .deckcard-season-2 .deckcard-title a,
     .deckcard-season-2 .deckcard-desc,
@@ -528,7 +606,56 @@
     .deckcard-season-2 img.badge {
         max-width: 1.5em !important;
     }
+	
+	/* Season 3 Cards */
+	.deckcard-season-3 .s3-slogan,
+	.deckcard-season-3 .nameblock .nnameblock .ntype,
+	.deckcard-season-3 .trophies {
+		display: none;
+	}
+	.deckcard-season-3 .s3-slogan {
+		padding: 5px 16px;
+		font-size: 1.25em;
+	}
+	.deckcard-season-3 .nameblock {
+		margin: 0.75em;
+	}
+	.deckcard-season-3 .nameblock .nnameblock .nname {
+		font-size: 2em;
+	}
+	.deckcard-season-3 .s3-lower::after,
+	.deckcard-season-3 .deckcard-desc-bit,
+	.deckcard-season-3 .deckcard-govt {
+		color: #fff;
+	}
+	.deckcard-season-3 .s3-lower::before {
+		background: #0d0d0d;
+	}
+	.deckcard-season-3 .deckcard-govt {
+		font-weight: bold;
+		font-size: 0.75em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.deckcard-season-3 .deckcard-stripe {
+		font-size: 1.35em;
+		color: #000;
+	}
+	.deckcard-season-3 .deckcard-season {
+		visibility:hidden;
+		position: relative;
+	}
+	.deckcard-season-3 .deckcard-season:after {
+		visibility: visible;
+		position:absolute;
+		top: 0;
+		left: 0;
+		font-size: 3.25em;
+		content: "③";
+	}
 
+    
     /* Settings */
     table.settings .pdescriptor {
         color: #d0d0d0;
