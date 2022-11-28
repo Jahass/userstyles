@@ -2,7 +2,7 @@
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
 @updateURL      https://raw.githubusercontent.com/Jahass/userstyles/main/nationstates-dark-mode-improved.user.css
-@version        0.1.5.2
+@version        0.1.6
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
@@ -426,7 +426,8 @@
         background: #fdfefe;
     }
     .minicard-season-1.deckcard-category-common,
-    .minicard-season-2.deckcard-category-common{
+    .minicard-season-2.deckcard-category-common, 
+	.minicard-season-3.deckcard-category-common {
         border: 2px solid #fdfefe;
     }
     
@@ -436,7 +437,8 @@
         background: #27ae60;
     }
     .minicard-season-1.deckcard-category-uncommon,
-    .minicard-season-2.deckcard-category-uncommon {
+    .minicard-season-2.deckcard-category-uncommon,
+	.minicard-season-3.deckcard-category-uncommon {
         border: 2px solid #27ae60;
     }
     
@@ -446,7 +448,8 @@
         background: #2471a3;
     }
     .minicard-season-1.deckcard-category-rare,
-    .minicard-season-2.deckcard-category-rare {
+    .minicard-season-2.deckcard-category-rare,
+	.minicard-season-3.deckcard-category-rare {
         border: 2px solid #2471a3;
     }
     
@@ -456,7 +459,8 @@
         background: #7d3c98;
     }
     .minicard-season-1.deckcard-category-ultra-rare,
-    .minicard-season-2.deckcard-category-ultra-rare {
+    .minicard-season-2.deckcard-category-ultra-rare,
+	.minicard-season-3.deckcard-category-ultra-rare {
         border: 2px solid #7d3c98;
     }
     
@@ -466,7 +470,8 @@
         background: #f1c40f;
     }
     .minicard-season-1.deckcard-category-epic, 
-    .minicard-season-2.deckcard-category-epic {
+    .minicard-season-2.deckcard-category-epic,
+	.minicard-season-3.deckcard-category-epic {
         border: 2px solid #f1c40f;
     }
     
@@ -476,7 +481,8 @@
         background: #d35400;
     }
     .minicard-season-1.deckcard-category-legendary,
-    .minicard-season-2.deckcard-category-legendary {
+    .minicard-season-2.deckcard-category-legendary,
+	.minicard-season-3.deckcard-category-legendary {
         border: 2px solid #d35400;
     }
     
@@ -530,21 +536,27 @@
     .deckcard-season-1 .deckcard-desc,
     .deckcard-season-1 .deckcard-govt,
     .deckcard-season-1 .deckcard-slogan,
-    .deckcard-season-1 .deckcard-season,
     .deckcard-season-1 .deckcard-region {
         color: #d0d0d0;
     }
+    .deckcard-season-1 .deckcard-season,
+    .deckcard-season-1 .deckcard-region a.rlink,
+    .deckcard-season-1 .deckcard-region span b {
+        color: #000;
+    }
     .deckcard-season-1 .deckcard-category,
     .deckcard-season-1 .deckcard-season,
-    .deckcard-season-1 .deckcard-region a.rlink {
-        font-size: 0.5em;
+    .deckcard-season-1 .deckcard-region {
+        font-size: 0.55em;
         text-transform: uppercase;
     }
     .deckcard-season-1 .deckcard-stripe {
         filter: unset;
     }
     .deckcard-season-1 .nameblock .nnameblock .ntype,
-    .deckcard-season-1 .deckcard-desc {
+    .deckcard-season-1 .deckcard-desc,
+    .deckcard-season-1 .specialbadges,
+    .deckcard-season-1 #trophycabinet {
         display: none;
     }
     .deckcard-season-1 img.trophy,
@@ -574,6 +586,13 @@
     }
 
     /* Season 2 Cards */
+    .deckcard-season-2 figure {
+        width: 100%;
+    }
+    .deckcard-season-2 figure.front, .deckcard-season-2 figure.back {
+        box-shadow: none;
+        padding: 0;
+    }
     .deckcard-season-2 .specialbadges,
     .deckcard-season-2 #trophycabinet {
         display: none;
@@ -583,11 +602,14 @@
     .deckcard-season-2 .deckcard-desc,
     .deckcard-season-2 .deckcard-govt,
     .deckcard-season-2 .deckcard-slogan {
-        color: #d0d0d0;
+        color: #fff;
     }
     .deckcard-season-2 .deckcard-category,
     .deckcard-season {
         font-size: 0.5em;
+    }
+    .deckcard-season-2 .deckcard-stripe {
+        width: 100%;
     }
     .deckcard-season-2 .deckcard-stripe .deckcard-region {
         font-size: 0.5em;
@@ -596,15 +618,24 @@
     .deckcard-season-2 .deckcard-info {
         background-color: rgba(0, 0, 0, 0.85);
     }
+    .deckcard-season-2 .deckcard-title {
+        background: none;
+        border: none;
+    }
     .deckcard-season-2 .deckcard-title .nameblock .nnameblock .ntype {
         display: none;
     }
     .deckcard-season-2 .deckcard-title .nameblock .nnameblock .nname {
         font-size: 1em;
+        font-weight: 700;
+        filter: drop-shadow(1px 1px 1px black) drop-shadow(1px 1px 1px black);
     }
     .deckcard-season-2 img.trophy,
     .deckcard-season-2 img.badge {
         max-width: 1.5em !important;
+    }
+    .deckcard-season-2 .deckcard-desc {
+        width: 94%;
     }
     
     /* Season 3 Cards */
