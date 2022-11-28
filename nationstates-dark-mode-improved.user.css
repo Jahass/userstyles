@@ -2,7 +2,7 @@
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
 @updateURL      https://raw.githubusercontent.com/Jahass/userstyles/main/nationstates-dark-mode-improved.user.css
-@version        0.1.6
+@version        0.1.7
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
@@ -531,6 +531,10 @@
     }
 
     /* Season 1 Cards */
+    .deckcard-season-1 .deckcard-flag {
+        background-position: top center;
+        filter: none;
+    }
     .deckcard-season-1 .deckcard-title,
     .deckcard-season-1 .deckcard-title a,
     .deckcard-season-1 .deckcard-desc,
@@ -593,6 +597,10 @@
         box-shadow: none;
         padding: 0;
     }
+    .deckcard-season-2 .deckcard-flag {
+        background-position: top center;
+        box-shadow: none;
+    }
     .deckcard-season-2 .specialbadges,
     .deckcard-season-2 #trophycabinet {
         display: none;
@@ -621,6 +629,7 @@
     .deckcard-season-2 .deckcard-title {
         background: none;
         border: none;
+        top: 5%;
     }
     .deckcard-season-2 .deckcard-title .nameblock .nnameblock .ntype {
         display: none;
