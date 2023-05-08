@@ -2,7 +2,7 @@
 @name           NationStates Dark Mode Improved
 @namespace      github.com/Jahass/userstyles
 @updateURL      https://raw.githubusercontent.com/Jahass/userstyles/main/nationstates-dark-mode-improved.user.css
-@version        0.1.7
+@version        0.1.9
 @description    Provides a variety of fixes for the Dark theme on NationStates, including accessibility improvements.
 @author         Jahass
 ==/UserStyle== */
@@ -310,11 +310,14 @@
         font-weight: bold;
     }
     p.nationnavbar {
-        display: block;
+        display: flex !important;
     }
     p.nationnavbar a {
         color: #a9a96c;
         /* AAA */
+    }
+    .nationnavbar a.navbarlink-monument, .nationnavbar a.navbarlink-town-hall, .nationnavbar a.navbarlink-award, .nationnavbar a.navbarlink-target, .nationnavbar a.navbarlink-biohazard {
+        margin: 0 0;
     }
     .nationnavbar a span.navtext {
         opacity: 1;
@@ -529,7 +532,16 @@
         width: 210px;
         height: 300px;
     }
+    .deckcard-container:hover {
+        transform: scale(1.05);
+        transition: transform 1s ease-in-out;
+    }
 
+    /* Season Selector */
+    .deckcard-season-list-card-selected {
+      padding: 10px 5px 5px;
+    }
+    
     /* Season 1 Cards */
     .deckcard-season-1 .deckcard-flag {
         background-position: top center;
